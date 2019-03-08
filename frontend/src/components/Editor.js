@@ -7,9 +7,10 @@ export const Editor = () => {
   const [code, setCode] = useState('');
   const { results, dispatch } = getContext();
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     setCode('');
-    dispatch(setWords(code));
+    const words = await setWords(code);
+    dispatch(words);
   };
   console.log(results);
   return (
