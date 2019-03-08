@@ -1,18 +1,15 @@
-import React, { Component } from 'react';
-import { Editor } from './Editor';
-import { ResultList } from './ResultList';
+import React from 'react';
+import { Editor } from './components/Editor';
+import { ResultList } from './components//ResultList';
+import { ContextProvider } from './ContextProvider';
 
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <Editor />
-        <ResultList />
-      </div>
-    );
-  }
-}
+const App = () => (
+  <ContextProvider>
+    <Editor />
+    <ResultList />
+  </ContextProvider>
+);
 
 export default App;
