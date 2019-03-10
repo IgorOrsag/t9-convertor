@@ -25,6 +25,15 @@
  display: flex;
  flex-direction: row;
 }
+.editor-item {
+ margin: 5px
+}
+.result-list {
+  margin: 20px;
+  overflow: auto;
+  height: 400px;
+  width: 250px;
+}
 
 @keyframes App-logo-spin {
   from {

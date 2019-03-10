@@ -15,22 +15,24 @@ export const Editor = () => {
     setCode('');
     dispatch(resetWords());
   };
-  console.log(results);
+
   return (
     <div className="editor-container">
-      <div>
+      <div className="editor-item">
         <InputField
           value={code}
           placeholder="Type numeric code"
           onChange={e => setCode(e.target.value)}
         />
       </div>
-      <div>
+      <div className="editor-item">
         <Button onClick={handleSubmit}>Convert</Button>
       </div>
       {results.length ? (
-        <div>
-          <Button onClick={handleReset}>Reset</Button>
+        <div className="editor-item">
+          <Button type="secondary" onClick={handleReset}>
+            Reset
+          </Button>
         </div>
       ) : null}
     </div>
