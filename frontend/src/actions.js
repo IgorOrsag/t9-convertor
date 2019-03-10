@@ -10,3 +10,5 @@ export const setWords = async query => {
   const body = await response.json();
   return { type: c.SET_WORDS, payload: body.converted };
 };
+
+export const resetWords = () => ({ type: c.SET_WORDS, payload: [] });

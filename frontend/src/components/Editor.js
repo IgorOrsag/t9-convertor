@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
 import { Button, InputField } from '@kiwicom/orbit-components';
 import { getContext } from './../ContextProvider';
-import { setWords } from './../actions';
+import { setWords, resetWords } from './../actions';
 
 export const Editor = () => {
   const [code, setCode] = useState('');
   const { results, dispatch } = getContext();
 
   const handleSubmit = async () => {
-    setCode('');
     const words = await setWords(code);
     dispatch(words);
+  };
+  const handleReset = async () => {
+    setCode('');
+    dispatch(resetWords());
   };
   console.log(results);
   return (
@@ -25,6 +28,11 @@ export const Editor = () => {
       <div>
         <Button onClick={handleSubmit}>Convert</Button>
       </div>
+      {results.length ? (
+        <div>
+          <Button onClick={handleReset}>Reset</Button>
+        </div>
+      ) : null}
     </div>
   );
 };
