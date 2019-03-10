@@ -6,12 +6,17 @@ const extendListByFragment = (list, fragment) =>
   flatten(list.map(word => extendWordByFragment(word, fragment)));
 
 const getWords = numstring => {
+  if (!isNaN(numstring)) {
+    numstring = numstring.toString();
+  }
   const fragments = getAlphabetCharsForNumstring(numstring);
+  if (!fragments.length) {
+    return '';
+  }
   const first = fragments.shift();
-  const result = fragments.reduce(extendListByFragment, first);
-  return result;
+  return fragments.reduce(extendListByFragment, first);
 };
 
-const getTextonyms = () => {};
+const filterTextonyms = () => [];
 
-module.exports = { getTextonyms, getWords, extendListByFragment, extendWordByFragment };
+module.exports = { filterTextonyms, getWords, extendListByFragment, extendWordByFragment };
