@@ -1,7 +1,7 @@
 import * as c from './constants';
 
-export const setWords = async () => {
-  const response = await fetch('convert', {
+export const setWords = async query => {
+  const response = await fetch(`convert?query=${query}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'
