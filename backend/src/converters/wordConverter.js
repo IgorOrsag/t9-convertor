@@ -1,6 +1,5 @@
 const { flatten } = require('lodash');
 const { getAlphabetCharsForNumstring } = require('./charConverter');
-const { corpus } = require('./../../corpus');
 
 const extendWordByFragment = (word, fragment) => fragment.map(character => word + character);
 const extendListByFragment = (list, fragment) =>
@@ -18,8 +17,4 @@ const getWords = numstring => {
   return fragments.reduce(extendListByFragment, first);
 };
 
-const filterTextonyms = words => {
-  return words.filter(word => corpus.indexOf(word) !== -1);
-};
-
-module.exports = { filterTextonyms, getWords, extendListByFragment, extendWordByFragment };
+module.exports = { getWords, extendListByFragment, extendWordByFragment };
