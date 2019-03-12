@@ -2,13 +2,15 @@ import React, { createContext, useContext, useReducer } from 'react';
 
 import * as c from './constants';
 
-const initialState = { results: [], error: null };
+const initialState = { results: [], error: null, loading: false };
 const reducer = (state, action) => {
   switch (action.type) {
     case c.SET_WORDS:
       return { ...state, error: null, results: action.payload };
     case c.SET_ERROR:
       return { ...state, error: action.payload };
+    case c.SET_LOADING:
+      return { ...state, loading: action.payload };
     default:
       return state;
   }

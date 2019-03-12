@@ -17,3 +17,4 @@ export const setWords = async query => {
 export const resetWords = () => ({ type: c.SET_WORDS, payload: [] });
 
 export const setError = err => ({ type: c.SET_ERROR, payload: err });
+export const setLoading = loading => ({ type: c.SET_LOADING, payload: loading });
