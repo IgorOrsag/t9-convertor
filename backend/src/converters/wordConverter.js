@@ -11,7 +11,7 @@ const getWords = numstring => {
   }
   const fragments = getAlphabetCharsForNumstring(numstring);
   if (!fragments.length) {
-    return '';
+    return [];
   }
   const first = fragments.shift();
   return fragments.reduce(extendListByFragment, first);

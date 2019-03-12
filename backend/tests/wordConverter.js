@@ -32,8 +32,12 @@ describe('Converts numeric string to an array of all possible alphabetic strings
     expect(getWords(alfaNumstring)).to.have.members(numstringShortMembers);
   });
 
-  it('Should return empty string for nonnumeric string', () => {
-    expect(getWords(textonym)).to.equals('');
+  it('Should return empty array for nonnumeric string', () => {
+    expect(getWords(textonym)).to.be.an('array').that.is.empty;
+  });
+
+  it('Should return empty array for empty string', () => {
+    expect(getWords('')).to.be.an('array').that.is.empty;
   });
   it('Should convert for numeric input', () => {
     expect(getWords(number)).to.have.members(numstringShortMembers);

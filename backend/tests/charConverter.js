@@ -44,4 +44,7 @@ describe('Returns an array of alphabet chars for each numeric character', () => 
       ['g', 'h', 'i']
     ]);
   });
+  it('Should return empty array for empty string', () => {
+    expect(getAlphabetCharsForNumstring('')).to.be.an('array').that.is.empty;
+  });
 });
