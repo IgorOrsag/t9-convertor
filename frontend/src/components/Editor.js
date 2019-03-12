@@ -30,6 +30,7 @@ export const Editor = () => {
       <div className="editor-item">
         <InputField
           value={code}
+          maxLength={13}
           placeholder="Type numeric code"
           onChange={e => setCode(e.target.value)}
         />

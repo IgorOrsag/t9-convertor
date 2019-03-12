@@ -9,5 +9,5 @@ module.exports.converter = (req, res) => {
   console.log('Converted words: ', converted);
   console.log('Filtered textonyms: ', textonyms);
 
-  res.json({ converted, textonyms });
+  res.json({ textonyms });
 };
