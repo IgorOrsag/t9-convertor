@@ -7,8 +7,13 @@ export const setWords = async query => {
       'Content-Type': 'application/json'
     }
   });
+  if (!response.ok) {
+    throw new Error('API request failed');
+  }
   const body = await response.json();
-  return { type: c.SET_WORDS, payload: body.converted };
+  return { type: c.SET_WORDS, payload: body.textonyms };
 };
 
 export const resetWords = () => ({ type: c.SET_WORDS, payload: [] });
+
+export const setError = err => ({ type: c.SET_ERROR, payload: err });

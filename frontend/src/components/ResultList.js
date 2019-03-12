@@ -5,9 +5,11 @@ import { getContext } from './../ContextProvider';
 import { ResultItem } from './ResultItem';
 
 export const ResultList = () => {
-  const { results } = getContext();
+  const {
+    state: { results }
+  } = getContext();
   return (
-    <div className='result-list'>
+    <div className="result-list">
       <List>
         {results.map((result, i) => (
           <ResultItem key={`result-${i}`} result={result} />
