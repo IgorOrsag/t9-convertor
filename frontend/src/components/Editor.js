@@ -6,7 +6,7 @@ import { setWords, resetWords, setError } from './../actions';
 export const Editor = () => {
   const [code, setCode] = useState('');
   const {
-    state: { results, error },
+    state: { results },
     dispatch
   } = getContext();
 
@@ -35,7 +35,6 @@ export const Editor = () => {
       <div className="editor-item">
         <Button onClick={handleSubmit}>Convert</Button>
       </div>
-      {error}
       {results.length ? (
         <div className="editor-item">
           <Button type="secondary" onClick={handleReset}>
